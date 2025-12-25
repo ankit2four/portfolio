@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ankit Singh | Software Development Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+<style>
+:root {
+  --bg:#0b0d10;
+  --glass:rgba(255,255,255,.06);
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#6366f1;
+  --radius:16px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Inter,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* ===== SCROLL PROGRESS ===== */
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  width:0%;
+  background:linear-gradient(90deg,var(--accent),#22d3ee);
+  z-index:9999;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor{
+  width:16px;
+  height:16px;
+  border:2px solid var(--accent);
+  border-radius:50%;
+  position:fixed;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  z-index:10000;
+  transition:transform .15s ease;
+}
+
+section{padding:120px 10%}
+
+.section-title{
+  font-size:2.4rem;
+  margin-bottom:40px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.icon{
+  width:28px;
+  height:28px;
+  stroke:var(--accent);
+  stroke-width:2;
+  fill:none;
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:18px 60px;
+  display:flex;
+  justify-content:space-between;
+  backdrop-filter:blur(14px);
+  background:rgba(11,13,16,.6);
+  z-index:100;
+}
+
+nav a{
+  margin-left:28px;
+  color:var(--muted);
+  text-decoration:none;
+  position:relative;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding-top:120px;
+  background:
+    radial-gradient(circle at 20% 20%,#1f2937,transparent),
+    radial-gradient(circle at 80% 80%,#111827,transparent);
+}
+
+.hero h1{
+  font-size:clamp(3.2rem,7vw,5.5rem);
+  font-weight:900;
+}
+.hero h2{color:var(--accent);margin-top:10px}
+.hero p{max-width:640px;margin:24px auto;color:var(--muted)}
+
+.btn{
+  padding:14px 30px;
+  border-radius:var(--radius);
+  margin:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  transition:.3s;
+}
+.primary{background:var(--accent);color:#fff}
+.ghost{border:1px solid var(--glass);color:var(--text)}
+.btn:hover{transform:translateY(-6px)}
+
+.timeline-item{
+  display:grid;
+  grid-template-columns:40px 1fr;
+  gap:20px;
+  background:var(--glass);
+  padding:26px;
+  border-radius:var(--radius);
+  margin-bottom:20px;
+}
+
+.dot{
+  width:14px;
+  height:14px;
+  background:var(--accent);
+  border-radius:50%;
+  margin-top:6px;
+}
+
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:var(--glass);
+  padding:26px;
+  border-radius:var(--radius);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-10px)}
+
+.skills{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:16px;
+}
+
+.skill{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px;
+  background:var(--glass);
+  border-radius:12px;
+}
+
+footer{
+  padding:40px;
+  text-align:center;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<!-- REQUIRED ELEMENTS -->
+<div class="progress"></div>
+<div class="cursor"></div>
+
+<header>
+  <strong>Ankit Singh</strong>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1 class="reveal">Ankit Singh</h1>
+    <h2 class="reveal">Software Development Engineer</h2>
+    <p class="reveal">
+      Building scalable systems, clean UI architectures, and performance-focused applications.
+    </p>
+    <a href="#projects" class="btn primary magnetic">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 5l6 7-6 7"/></svg>
+      View Projects
+    </a>
+    <a href="Ankit_Singh_Resume.pdf" class="btn ghost magnetic">Download Resume</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h3 class="section-title">
+    <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0113 0"/></svg>
+    About
+  </h3>
+  <p>
+    Software Development Engineer experienced in full-stack development,
+    REST APIs, authentication, and scalable architectures.
+  </p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h3 class="section-title">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M3 7h18v13H3z"/><path d="M16 3H8v4h8z"/></svg>
+    Experience
+  </h3>
+
+  <div class="timeline-item">
+    <div class="dot"></div>
+    <div>
+      <strong>LTIMindtree — Software Development Engineer</strong>
+      <p>Enterprise apps, APIs, JWT auth, scalable UI modules.</p>
+    </div>
+  </div>
+
+  <div class="timeline-item">
+    <div class="dot"></div>
+    <div>
+      <strong>Deloitte — Virtual Experience</strong>
+      <p>System design, consulting workflows, real-world engineering problems.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h3 class="section-title">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M3 12l9-9 9 9-9 9z"/></svg>
+    Projects
+  </h3>
+
+  <div class="projects">
+    <div class="card">
+      <strong>Intellichat</strong>
+      <p>AI-powered chat system with scalable backend architecture.</p>
+    </div>
+    <div class="card">
+      <strong>Hand Gesture Controller</strong>
+      <p>Computer-vision based gesture interaction system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h3 class="section-title">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg>
+    Skills
+  </h3>
+
+  <div class="skills">
+    <div class="skill">⚡ JavaScript</div>
+    <div class="skill">🟢 Node.js</div>
+    <div class="skill">🟣 ASP.NET Core</div>
+    <div class="skill">🍃 MongoDB</div>
+    <div class="skill">🗄️ MySQL</div>
+    <div class="skill">🔐 JWT Auth</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h3 class="section-title">
+    <svg class="icon" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+    Contact
+  </h3>
+
+  <a class="btn ghost magnetic" href="mailto:ankit.singh@email.com">📧 Email</a>
+  <a class="btn ghost magnetic" href="https://github.com/yourgithub">🐙 GitHub</a>
+  <a class="btn ghost magnetic" href="https://linkedin.com/in/yourlinkedin">💼 LinkedIn</a>
+</section>
+
+<footer>© 2025 Ankit Singh</footer>
+
+<script>
+/* ===== LENIS ===== */
+const lenis=new Lenis({smooth:true});
+function raf(t){lenis.raf(t);requestAnimationFrame(raf)}
+requestAnimationFrame(raf);
+
+/* ===== GSAP ===== */
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".reveal",{y:60,opacity:0,stagger:.15,duration:1.2,ease:"power3.out"});
+
+gsap.utils.toArray("section").forEach(sec=>{
+  gsap.from(sec,{
+    scrollTrigger:{trigger:sec,start:"top 80%"},
+    opacity:0,y:60,duration:1,ease:"power3.out"
+  });
+});
+
+/* ===== SCROLL PROGRESS (FIXED FOR LENIS) ===== */
+lenis.on('scroll', ({ scroll, limit }) => {
+  document.querySelector('.progress').style.width =
+    (scroll / limit) * 100 + '%';
+});
+
+/* ===== CUSTOM CURSOR ===== */
+const cursor=document.querySelector('.cursor');
+window.addEventListener('mousemove',e=>{
+  cursor.style.left=e.clientX+'px';
+  cursor.style.top=e.clientY+'px';
+});
+
+/* ===== MAGNETIC BUTTONS ===== */
+document.querySelectorAll('.magnetic').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect();
+    btn.style.transform=
+      `translate(${(e.clientX-r.left-r.width/2)/5}px,
+                 ${(e.clientY-r.top-r.height/2)/5}px)`;
+  });
+  btn.addEventListener('mouseleave',()=>btn.style.transform='translate(0,0)');
+});
+</script>
+
+</body>
+</html>
