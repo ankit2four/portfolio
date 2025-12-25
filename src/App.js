@@ -124,6 +124,13 @@ function App() {
             </div>
             <div className="hero-actions">
               <a href="mailto:mmail2ankit1234@gmail.com" className="btn primary magnetic">Let’s Talk</a>
+              <a
+                className="btn ghost magnetic"
+                href={asset('/ResumeAnkit.pdf')}
+                download="Ankit-Singh-Resume.pdf"
+              >
+                Download Resume
+              </a>
               <a href="#experience" className="btn ghost magnetic">Experience</a>
               <a href="https://github.com/ankit2four" className="btn ghost magnetic" target="_blank" rel="noreferrer">GitHub</a>
             </div>
