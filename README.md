@@ -28,7 +28,7 @@ A responsive full-stack portfolio highlighting projects, skills, and contact lin
 npm install
 npm start
 ```
-Open http://localhost:3000.
+Open [portfolio](https://portfolio-vert-one-mgdn6r1zoc.vercel.app/)
 
 ## Scripts
 - `npm start` – dev server
