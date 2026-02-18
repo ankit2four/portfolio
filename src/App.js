@@ -3,6 +3,7 @@ import './App.css';
 import Lenis from '@studio-freight/lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import AutoChatWidget from './components/AutoChatWidget';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -553,6 +554,7 @@ function App() {
         </div>
       </section>
       <footer>© 2025 Ankit Singh</footer>
+      <AutoChatWidget />
     </div>
   );
 }
