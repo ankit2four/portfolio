@@ -84,7 +84,6 @@ export default function AutoChatWidget() {
     }
   }
 
-  const launcherEmoji = '\uD83D\uDCAC'; // 💬
   const botEmoji = '\uD83E\uDD16'; // 🤖
 
   // Prevent global smooth-scroll handlers (Lenis) from hijacking wheel/touch inside the widget.
