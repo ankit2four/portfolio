@@ -59,7 +59,7 @@
 }
 
 .auto-chat-panel {
-  width: min(520px, calc(100vw - 32px));
+  width: min(620px, calc(100vw - 32px));
   height: min(780px, calc(100vh - 84px));
   display: flex;
   flex-direction: column;
@@ -84,25 +84,36 @@
 }
 
 .auto-chat-head {
-  flex: 0 0 auto;
-  display: flex;
+  display: grid;
+
+  grid-template-columns: 34px auto 1fr auto;
+  grid-template-rows: auto;
+
+  grid-template-areas:
+    "icon title subtitle close";
+
   align-items: center;
-  justify-content: space-between;
+  column-gap: 10px;
+
   padding: 12px 14px;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
   background: linear-gradient(90deg,
-      rgba(124, 58, 237, 0.22) 0%,
-      rgba(34, 211, 238, 0.12) 100%);
+      rgba(124, 58, 237, 0.22),
+      rgba(34, 211, 238, 0.12));
 }
 
 .auto-chat-id {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  flex: 1;
   min-width: 0;
 }
 
 .auto-chat-chip {
+  grid-area: icon;
   width: 34px;
   height: 34px;
   border-radius: 12px;
@@ -115,6 +126,7 @@
 }
 
 .auto-chat-title {
+  grid-area: title;
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.1;
@@ -123,16 +135,21 @@
 }
 
 .auto-chat-subtitle {
+  grid-area: subtitle;
   margin: 0;
   font-size: 0.85rem;
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 240px;
+  /* max-width: 240px; */
 }
 
 .auto-chat-close {
+  grid-area: close;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
@@ -390,4 +407,27 @@
     transition: none;
     animation: none;
   }
+}
+
+@media (max-width: 480px) {
+
+  .auto-chat-head {
+
+    grid-template-columns: 34px 1fr auto;
+
+    grid-template-rows: auto auto;
+
+    grid-template-areas:
+      "icon title close"
+      "icon subtitle close";
+
+    row-gap: 2px;
+  }
+
+  .auto-chat-subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 }

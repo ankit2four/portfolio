@@ -140,17 +140,19 @@ export default function AutoChatWidget() {
           onTouchMoveCapture={stopScrollBubble}
         >
           <header className="auto-chat-head">
-            <div className="auto-chat-id">
-              <div className="auto-chat-chip" aria-hidden="true">
-                {botEmoji}
-              </div>
-              <div>
-                <p className="auto-chat-title">Auto</p>
-                {/* <p className="auto-chat-subtitle">Ask about Ankit's work</p> */}
-              </div>
-              <p className="auto-chat-subtitle">Ask about Ankit's work</p>
+            
+            <div className="auto-chat-chip">{botEmoji}</div>
+            <div className="auto-chat-title">Auto</div>
+
+            <div className="auto-chat-subtitle">
+              Ask about Ankit's work
             </div>
-            <button type="button" className="auto-chat-close" onClick={() => setIsOpen(false)} aria-label="Close chat">
+
+            <button
+              type="button"
+              className="auto-chat-close"
+              onClick={() => setIsOpen(false)}
+            >
               X
             </button>
           </header>
