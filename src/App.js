@@ -546,7 +546,7 @@ function App() {
               <p className="subtext">Quick responses on email or LinkedIn.</p>
             </div>
             <div className="cta-actions">
-              <a className="btn primary magnetic" href="mailto:mmail2ankit1234@gmail.com">Email</a>
+              <a className="btn primary magnetic" href="mailto:mail2ankit1234@gmail.com">Email</a>
               <a className="btn ghost magnetic" href="https://linkedin.com/in/ankit-singh-638733243">LinkedIn</a>
               <a className="btn ghost magnetic" href="https://github.com/ankit2four">GitHub</a>
             </div>
