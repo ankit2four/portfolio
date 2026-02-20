@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import './AutoChatWidget.css';
 import ChatMessage from "./ChatMessage";
 
-const API_URL = process.env.BOT_API_URL || 'https://portfolio-assistant-murex.vercel.app/api/chat';
+const API_URL = process.env.BOT_API_URL || 'http://localhost:3000/api/chat';
+console.log(process.env.BOT_API_URL);
 const STORAGE_KEY = 'portfolio-chat-session-id';
 
 function getOrCreateSessionId() {
