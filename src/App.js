@@ -214,6 +214,47 @@ function App() {
         <div className="projects">
           <div className="card">
             <div className="project-head">
+              <strong>Bakery Management Web Application</strong>
+              <span className="project-date">May 2026</span>
+            </div>
+
+            <p className="project-desc">
+              Production-oriented full-stack bakery management PWA with role-based access,
+              scalable REST APIs, JWT authentication, Cloudinary uploads, analytics,
+              and order management workflows for customers, admins, and staff.
+            </p>
+
+            <div className="project-preview">
+              <iframe
+                title="Bakery Management App live preview"
+                src="https://store-client-theta.vercel.app/"
+                loading="lazy"
+                allow="clipboard-write; clipboard-read"
+              />
+            </div>
+
+            <div className="chips">
+              <span className="chip">React</span>
+              <span className="chip">Node.js</span>
+              <span className="chip">MongoDB</span>
+              <span className="chip">JWT</span>
+              <span className="chip">Cloudinary</span>
+              <span className="chip">PWA</span>
+            </div>
+
+            <div className="project-actions">
+              <a
+                className="btn primary magnetic"
+                href="https://store-client-theta.vercel.app/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live demo
+              </a>
+            </div>
+          </div>
+          <div className="card">
+            <div className="project-head">
               <strong>Intellichat – AI-Powered Full-Stack Application</strong>
               <span className="project-date">June 2024</span>
             </div>
